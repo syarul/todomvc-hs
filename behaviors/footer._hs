@@ -1,6 +1,6 @@
 behavior Footer 
   on load set $footerFooter to me
-  on toggleClearCompleted debounced at 20ms
+  on toggleClearCompleted debounced at 50ms
     if $clearCompleted === undefined
       htmx.ajax("GET", "/completed", {target:".filters", swap: "afterend"})
     else

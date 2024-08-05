@@ -1,5 +1,5 @@
 behavior Destroy
-  on htmx:afterRequest debounced at 5ms
+  on htmx:afterRequest debounced at 50ms
     send toggleMain to <section.todoapp/>
     send toggleFooter to <section.todoapp/>
     send focus to <input.new-todo/>
