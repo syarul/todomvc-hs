@@ -5,3 +5,4 @@ behavior Destroy
     send focus to <input.new-todo/>
     if $todo
       send toggleClearCompleted to <footer.footer/>
+      send show to <section.todoapp/>

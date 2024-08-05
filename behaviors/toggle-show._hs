@@ -6,7 +6,7 @@ behavior ToggleShow
     fetch /todo-json as json then
       if window.location.hash === "#/active"
         for todo in it
-          if todo.done
+          if todo.completed
             document.getElementById(`todo-${todo.id}`) then if it remove it end
           else
             document.getElementById(`todo-${todo.id}`) then
@@ -17,7 +17,7 @@ behavior ToggleShow
         end
       else if window.location.hash === "#/completed"
         for todo in it
-          if todo.done
+          if todo.completed
             document.getElementById(`todo-${todo.id}`) then
             if it === null
               htmx.ajax("GET", `/todo-item?id=${todo.id}`, {target:".todo-list", swap: "beforeend"})
@@ -48,3 +48,6 @@ behavior ToggleShow
             htmx.ajax("GET", `/todo-item?id=${todo.id}`, {target:".todo-list", swap: "beforeend"})
           end
         end
+      end
+      if $todo.children.length === 0
+        document.getElementsByClassName('.todo-list') then if it remove it end

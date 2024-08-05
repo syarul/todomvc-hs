@@ -8,10 +8,10 @@ behavior AddTodo
   on blur set $isFocus to undefined
   on keyup[keyCode==13]
     if $todo
-      htmx.ajax('GET', `/add-todo?title=${my.value}`, {target:'.todo-list', swap:'beforeend'})
+      htmx.ajax('GET', `/add-todo?task=${my.value}`, {target:'.todo-list', swap:'beforeend'})
       set my value to ''
     else
-      htmx.ajax('GET', `/add-todo?title=${my.value}`, {target:'.header', swap:'beforeend'})
+      htmx.ajax('GET', `/add-todo?task=${my.value}`, {target:'.header', swap:'beforeend'})
       set my value to ''
     end
     send toggleMain to <section.todoapp/>

@@ -1,3 +1,5 @@
 behavior ClearCompleted
-  on load set $clearCompleted to me
-  on click send destroy to <li.completed/>
+  on load
+    set $clearCompleted to me
+  on click
+    send destroy to <li.completed/>
